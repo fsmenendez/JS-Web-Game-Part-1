@@ -6,6 +6,7 @@ function newImage(link, left, bottom){
     gameObject.style.left = left + 'px'
     gameObject.style.bottom = bottom + 'px'
     document.body.append(gameObject)
+    return gameObject
 }
 
 newImage('assets/green-character.gif', 100, 100)
@@ -16,15 +17,12 @@ newImage('assets/crate.png', 150, 200)
 newImage('assets/well.png', 500, 425)
 
 function newItem(link, left, bottom){
-    let gameItem = document.createElement('img')
-    gameItem.src = link
-    gameItem.style.position = 'fixed'
-    gameItem.style.left = left + 'px'
-    gameItem.style.bottom = bottom + 'px'
-    document.body.append(gameItem)
-    gameItem.addEventListener('click', function(){
-        gameItem.remove()
+    let item = newImage(link, left, bottom)
+    item.addEventListener('click', function(){
+        item.remove()
     })
 }
 
 newItem('assets/sword.png', 500, 405)
+newItem('assets/shield.png', 165, 185)
+newItem('assets/staff.png', 600, 100)
