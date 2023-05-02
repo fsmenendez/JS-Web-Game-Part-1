@@ -18,7 +18,7 @@ newImage('assets/well.png', 500, 425)
 
 function newItem(link, left, bottom){
     let item = newImage(link, left, bottom)
-    item.addEventListener('click', function(){
+    item.addEventListener('dblclick', function(){
         item.remove()
     })
 }
